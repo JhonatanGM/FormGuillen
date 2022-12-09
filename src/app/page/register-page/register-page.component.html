@@ -1,0 +1,94 @@
+<main>
+    <div class="centrado">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title d-flex justify-content-center"> Formulario de registro</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <form [formGroup]="registerForm" class="row g-3" (ngSubmit)="onSubmit()">
+                                <h5 class="card-title">Informaci&oacute;n del administrador</h5>
+                                <div class="col-6">
+                                    <label class="form-label" for="nombres">Nombres</label>
+                                    <input [formControl]="nombresControl" class="form-control" type="text" placeholder="donatelo estaban" />
+                                    <app-error-helper [control]="nombresControl"></app-error-helper>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="apellidos">Apellidos</label>
+                                    <input [formControl]="apellidosControl" class="form-control" type="text" placeholder="perez rojas" />
+                                    <app-error-helper [control]="apellidosControl"></app-error-helper>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="telefonoFijo">Tel&eacute;fono Fijo</label>
+                                    <input [formControl]="telefonoFijoControl" class="form-control" type="text" placeholder="333 5555" />
+                                    <app-error-helper [control]="telefonoFijoControl"></app-error-helper>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="celular">Celular</label>
+                                    <input [formControl]="celularControl" class="form-control" type="text" placeholder="987654123" />
+                                    <app-error-helper [control]="celularControl"></app-error-helper>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="email">E-mail</label>
+                                    <input [formControl]="emailControl" class="form-control" type="email" placeholder="example@gmail.com" />
+
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="reemail">repetir E-mail</label>
+                                    <input [formControl]="reemailControl" class="form-control" type="email" placeholder="example@gmail.com" />
+
+                                </div>
+
+                                <div class="col-6">
+                                    <label class="form-label" for="nombreComercio">Nombre de comercio</label>
+                                    <input [formControl]="nombreComercioControl" class="form-control" type="text" placeholder="Nombre de comercio" />
+                                    <app-error-helper [control]="nombreComercioControl"></app-error-helper>
+                                </div>
+
+                                <h5 class="card-title"> Informacion de la empresa</h5>
+                                <div class="col-6">
+                                    <label class="form-label" for="tipoSociedad">Tipo de sociedad</label>
+                                    <select [formControl]="tipoSociedadControl" class="form-select">
+                                <option value=""> Seleccione una opcion</option>
+                                <option value="'1'">S.A.C.</option>
+                                <option value="'2'">S.R.L</option>
+                                <option value="'3'">E.I.R.L.</option>
+                                <option value="'4'">S.A.A.</option>
+                            </select>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="representanteLegal">Representante legal</label>
+                                    <input [formControl]="representanteLegalControl" class="form-control" type="text" placeholder="Representante legal " />
+                                    <app-error-helper [control]="representanteLegalControl"></app-error-helper>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="razonSocial">Raz&oacute;n social</label>
+                                    <input [formControl]="razonSocialControl" class="form-control" type="text" placeholder="Razón social" />
+                                    <app-error-helper [control]="razonSocialControl"></app-error-helper>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="ruc">RUC</label>
+                                    <input [formControl]="rucControl" class="form-control" type="text" placeholder="RUC" />
+                                    <app-error-helper [control]="rucControl"></app-error-helper>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="form-check form-switch">
+                                        <input [formControl]="terminoCondicionesControl" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                                        <label class="form-check-label" for="flexSwitchCheckChecked">Terminos y condiciones</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</main>
